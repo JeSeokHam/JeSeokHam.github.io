@@ -114,22 +114,23 @@ h1.section-heading{
 
 /* ---------- Contact / Education 가로 2단 ---------- */
 .info-cols{
-  display:grid; grid-template-columns:1fr 1fr; gap:30px 70px; margin-top:54px;
+  display:grid; grid-template-columns:1fr 1fr; gap:26px 44px; margin-top:34px;
 }
 .info-heading{
-  font-size:1.85rem; font-weight:700; color:var(--ink-strong);
-  margin:0 0 18px; letter-spacing:-.01em;
+  font-size:1.25rem; font-weight:700; color:var(--ink-strong);
+  margin:0 0 12px; letter-spacing:-.01em;
 }
+.info-full{margin-top:26px}
 .info-list{list-style:none; margin:0; padding:0}
 .info-list li{
-  display:grid; grid-template-columns:30px 1fr; gap:10px;
-  align-items:start; margin-bottom:14px; font-size:1rem; color:var(--ink-strong);
-  line-height:1.55;
+  display:grid; grid-template-columns:22px 1fr; gap:9px;
+  align-items:start; margin-bottom:11px; font-size:.92rem; color:var(--ink-strong);
+  line-height:1.5;
 }
 .info-list .ico{display:flex; justify-content:center; padding-top:3px}
-.info-list .ico svg{width:19px; height:19px; fill:var(--ink-strong)}
+.info-list .ico svg{width:15px; height:15px; fill:var(--ink-strong)}
 .info-list em{
-  display:block; font-style:normal; font-size:.94rem;
+  display:block; font-style:normal; font-size:.85rem;
   color:var(--ink-faint); margin-top:1px;
 }
 
@@ -160,6 +161,16 @@ h1.section-heading{
 .pub-venue{font-size:.93rem; color:var(--ink); margin:0 0 6px}
 .pub-venue i{font-style:italic}
 .pub-badge{color:#c62828; font-weight:500}
+.pub-tags{display:flex; flex-wrap:wrap; gap:7px; margin:0 0 6px}
+.tag{
+  font-size:.84rem; line-height:1.5; padding:2px 9px; border-radius:3px;
+  display:inline-block; text-decoration:none;
+}
+.tag-if{background:rgba(41,98,255,.07); color:var(--ink-soft)}
+.tag-if b{color:var(--primary); font-weight:500}
+.tag-cite{background:#f0f0f0; color:var(--ink-soft)}
+.tag-cite b{color:var(--ink-strong); font-weight:700}
+.tag-cite:hover{background:rgba(41,98,255,.1); color:var(--primary); text-decoration:none}
 .pub-links{font-size:.92rem; color:var(--ink-faint); margin:10px 0 0}
 
 /* ---------- 경력 타임라인 ---------- */
@@ -194,7 +205,7 @@ h1.section-heading{
   .exp{grid-template-columns:1fr; gap:8px}
   .cols{grid-template-columns:1fr; gap:26px}
   .info-cols{grid-template-columns:1fr; gap:26px; margin-top:36px}
-  .info-heading{font-size:1.5rem}
+  .info-heading{font-size:1.15rem}
   .section{padding:40px 0}
   h1.section-heading{font-size:1.6rem; margin-bottom:24px}
   .container,.navbar-inner{padding:0 18px}
@@ -212,9 +223,7 @@ h1.section-heading{
     <div class="navlinks">
       <a href="#about">Home</a>
       <a href="#papers">Publications</a>
-      <a href="#experience">Experience</a>
       <a href="#awards">Awards &amp; Honors</a>
-      <a href="#activities">Activities</a>
     </div>
   </div>
 </nav>
@@ -232,22 +241,23 @@ h1.section-heading{
 
       <h1>Je-Seok Ham</h1>
       <p class="han">함제석</p>
-      <p class="aff">ETRI Senior Researcher</p>Ph.D. Student</p>
-      <p class="aff"><a href="https://cilabs.kaist.ac.kr/" target="_blank" rel="noopener">Computational Imaging Lab</a>, <a href="https://kaist.ac.kr/" target="_blank" rel="noopener">KAIST</a></p>
+      <p class="aff">Ph.D. Student, <a href="https://cilabs.kaist.ac.kr/" target="_blank" rel="noopener">Computational Imaging Lab</a>, <a href="https://kaist.ac.kr/" target="_blank" rel="noopener">KAIST</a></p>
+      <p class="aff">Senior Researcher, <a href="https://etri-visualintelligence.github.io/" target="_blank" rel="noopener">Visual Intelligence Lab</a>, <a href="https://www.etri.re.kr/eng/main/main.etri" target="_blank" rel="noopener">ETRI</a></p>
 
       <p class="pipe-links">
-        <a href="assets/CV_JeSeokHam.pdf">CV</a> |
-        <a href="https://scholar.google.com/citations?user=YOUR_ID&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a> |
-        <a href="https://github.com/JeSeokHam" target="_blank" rel="noopener">Github</a>
+        <a href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a> |
+        <a href="https://www.linkedin.com/in/je-seok-ham-9895981aa/" target="_blank" rel="noopener">LinkedIn</a>
       </p>
 
     </aside>
 
     <!-- 오른쪽 소개글 -->
     <div class="bio">
-      <p>I am a Ph.D. student in Electrical Engineering at KAIST, advised by <b>Prof. Changick Kim</b>. Before joining KAIST, I was a researcher at <a href="https://www.etri.re.kr/eng/main/main.etri" target="_blank" rel="noopener">ETRI</a>, where I worked on visual intelligence for intelligent transportation systems.</p>
+      <p>I am a <b>Senior Researcher</b> at the <a href="https://etri-visualintelligence.github.io/" target="_blank" rel="noopener">Visual Intelligence Lab</a>, <a href="https://www.etri.re.kr/eng/main/main.etri" target="_blank" rel="noopener">ETRI</a> (Electronics and Telecommunications Research Institute), where I have been working since 2019 on visual intelligence for intelligent transportation systems.</p>
 
-      <p><b>My research interests</b> include understanding and anticipating human behavior from video. I build multimodal systems that combine large vision-language models with spatio-temporal networks to predict pedestrian crossing intention — a core capability for safe autonomous driving.</p>
+      <p>I am also a <b>Ph.D. student</b> in the School of Electrical Engineering at KAIST, advised by <b>Prof. Changick Kim</b> at the <a href="https://cilabs.kaist.ac.kr/" target="_blank" rel="noopener">Computational Imaging Lab</a>.</p>
+
+      <p><b>My research interests</b> include understanding and anticipating human behavior from video. I build multimodal systems that combine large vision-language models with spatio-temporal networks to predict pedestrian crossing intention &mdash; a core capability for safe autonomous driving.</p>
 
       <ul class="interests">
         <li>Computer Vision</li>
@@ -257,12 +267,9 @@ h1.section-heading{
       </ul>
 
       <p>I am always open to discussion and collaboration on pedestrian behavior understanding and multimodal video reasoning. Feel free to reach out by email.</p>
-    </div>
-
-  </div>
 
   <!-- ===== Contact / Education (가로 2단) ===== -->
-  <div class="container info-cols">
+  <div class="info-cols">
 
     <div>
       <h2 class="info-heading">Contact</h2>
@@ -304,6 +311,24 @@ h1.section-heading{
     </div>
 
   </div>
+
+      <!-- ===== Research Experiences (한 줄) ===== -->
+      <div class="info-full">
+        <h2 class="info-heading">Research Experiences</h2>
+        <ul class="info-list">
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3V6a2 2 0 0 0-2-2H9Zm0 2h6v1H9V6ZM4 9h16v9H4V9Z"/></svg></span>
+            <span>
+              Senior Researcher, <a href="https://etri-visualintelligence.github.io/" target="_blank" rel="noopener">Visual Intelligence Lab</a>, ETRI, 2019 &ndash; Present
+              <em>Visual intelligence for intelligent transportation and pedestrian safety</em>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
 
@@ -322,8 +347,32 @@ h1.section-heading{
       <div>
         <p class="pub-title">Multimodal Understanding with GPT-4o to Enhance Generalizable Pedestrian Behavior Prediction</p>
         <p class="pub-authors"><b>Je-Seok Ham</b>, Jia Huang, Peng Jiang, Jinyoung Moon, Yongjin Kwon, Srikanth Saripalli, Changick Kim</p>
-        <p class="pub-venue"><i>Computers and Electrical Engineering</i>, Vol. 129, Part A, No. 110741, Jan. 2026</p>
+        <p class="pub-venue"><i>Computers and Electrical Engineering</i>, Vol. 129, No. 110741, Jan. 2026</p>
+        <div class="pub-tags"><span class="tag tag-if">Impact Factor: <b>여기에 입력</b> &nbsp;·&nbsp; JCR: <b>여기에 입력</b></span><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>2</b></a></div>
         <p class="pub-links">[ <a href="https://doi.org/10.1016/j.compeleceng.2025.110741" target="_blank" rel="noopener">paper</a> ]</p>
+      </div>
+    </div>
+
+    <div class="year-head">2025</div>
+
+    <div class="pub">
+      <img class="pub-thumb" src="assets/papers/watchoutped.png" alt="" data-label="KBS 2025&#10;main figure">
+      <div>
+        <p class="pub-title">WatchoutPed: A Dataset and Model for Vulnerable Pedestrian Anticipation in Surveillance Videos</p>
+        <p class="pub-authors"><b>Je-Seok Ham</b>, Dae Hoe Kim, Jinyoung Moon</p>
+        <p class="pub-venue"><i>Knowledge-Based Systems</i>, Vol. 316, No. 113352, 2025</p>
+        <div class="pub-tags"><span class="tag tag-if">Impact Factor: <b>여기에 입력</b> &nbsp;·&nbsp; JCR: <b>여기에 입력</b></span><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>6</b></a></div>
+        <p class="pub-links">[ <a href="https://doi.org/10.1016/j.knosys.2025.113352" target="_blank" rel="noopener">paper</a> ]</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img class="pub-thumb" src="assets/papers/avss2025.png" alt="" data-label="AVSS 2025&#10;main figure">
+      <div>
+        <p class="pub-title">Proactive Pedestrian Safety System by Fusing Trajectory Prediction with Semantic Ground Region Classification</p>
+        <p class="pub-authors">Seongchan Oh, Dae Hoe Kim, <b>Je-Seok Ham</b>, Jinyoung Moon</p>
+        <p class="pub-venue"><i>IEEE International Conference on Advanced Video and Signal-Based Surveillance (AVSS)</i>, 2025</p>
+        <p class="pub-links">[ <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
     </div>
 
@@ -335,6 +384,7 @@ h1.section-heading{
         <p class="pub-title">OmniPredict: GPT-4o Enhanced Multi-modal Pedestrian Crossing Intention Prediction</p>
         <p class="pub-authors"><b>Je-Seok Ham</b>, Jia Huang, Peng Jiang, Jinyoung Moon, Yongjin Kwon, Srikanth Saripalli, Changick Kim</p>
         <p class="pub-venue"><i>NeurIPS 2024 Workshop</i> on Adaptive Foundation Models</p>
+        <div class="pub-tags"><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>9</b></a></div>
         <p class="pub-links">[ <a href="https://openreview.net/" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
     </div>
@@ -344,7 +394,8 @@ h1.section-heading{
       <div>
         <p class="pub-title">LLaMAPed: Multi-modal Pedestrian Crossing Intention Prediction</p>
         <p class="pub-authors"><b>Je-Seok Ham</b>, Sunghun Kim, Jia Huang, Peng Jiang, Jinyoung Moon, Srikanth Saripalli, Changick Kim</p>
-        <p class="pub-venue"><i>ECCV 2024 Workshops</i>, pp. 150–167</p>
+        <p class="pub-venue"><i>ECCV 2024 Workshops</i>, pp. 150&ndash;167</p>
+        <div class="pub-tags"><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>8</b></a></div>
         <p class="pub-links">[ <a href="https://link.springer.com/" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
     </div>
@@ -356,7 +407,8 @@ h1.section-heading{
       <div>
         <p class="pub-title">CIPF: Crossing Intention Prediction Network based on Feature Fusion Modules for Improving Pedestrian Safety</p>
         <p class="pub-authors"><b>Je-Seok Ham</b>, Dae Hoe Kim, NamKyo Jung, Jinyoung Moon</p>
-        <p class="pub-venue"><i>CVPR 2023 Workshops</i>, pp. 3665–3674</p>
+        <p class="pub-venue"><i>CVPR 2023 Workshops</i>, pp. 3665&ndash;3674</p>
+        <div class="pub-tags"><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>79</b></a></div>
         <p class="pub-links">[ <a href="https://openaccess.thecvf.com/content/CVPR2023W/WAD/papers/Ham_CIPF_Crossing_Intention_Prediction_Network_Based_on_Feature_Fusion_Modules_CVPRW_2023_paper.pdf" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
     </div>
@@ -368,7 +420,8 @@ h1.section-heading{
       <div>
         <p class="pub-title">MCIP: Multi-Stream Network for Pedestrian Crossing Intention Prediction</p>
         <p class="pub-authors"><b>Je-Seok Ham</b>, Kangmin Bae, Jinyoung Moon</p>
-        <p class="pub-venue"><i>ECCV 2022 Workshops</i>, pp. 663–679</p>
+        <p class="pub-venue"><i>ECCV 2022 Workshops</i>, pp. 663&ndash;679</p>
+        <div class="pub-tags"><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>44</b></a></div>
         <p class="pub-links">[ <a href="https://link.springer.com/chapter/10.1007/978-3-031-25056-9_42" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
     </div>
@@ -376,44 +429,73 @@ h1.section-heading{
     <div class="year-head">2021</div>
 
     <div class="pub">
+      <img class="pub-thumb" src="assets/papers/hpcasia2021.png" alt="" data-label="HPC Asia 2021&#10;main figure">
+      <div>
+        <p class="pub-title">HPC LINPACK Parameter Optimization on Homo-/Heterogeneous System of ARM Neoverse N1SDP</p>
+        <p class="pub-authors"><b>Je-Seok Ham</b>, Yong Cheol Peter Cho, Juyeop Kim, Chun-Gi Lyuh, Jinkyu Kim, Jinho Han, Youngsu Kwon</p>
+        <p class="pub-venue"><i>International Conference on High Performance Computing in Asia-Pacific Region (HPC Asia)</i>, 2021</p>
+        <div class="pub-tags"><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>1</b></a></div>
+        <p class="pub-links">[ <a href="https://dl.acm.org/" target="_blank" rel="noopener">paper</a> ]</p>
+      </div>
+    </div>
+
+    <div class="pub">
       <img class="pub-thumb" src="assets/papers/iscas2021.png" alt="" data-label="ISCAS 2021&#10;main figure">
       <div>
         <p class="pub-title">Live Demonstration: A Neural Processor for AI Acceleration</p>
         <p class="pub-authors">Hyeji Kim, Jaehoon Chung, Kyoung-Seon Shin, Chun-Gi Lyuh, Hyun-Mi Kim, Chan Kim, Yong Cheol Peter Cho, Jeongmin Yang, <b>Je-Seok Ham</b>, Minseok Choi, Jinho Han, Youngsu Kwon</p>
         <p class="pub-venue"><i>IEEE International Symposium on Circuits and Systems (ISCAS)</i>, 2021</p>
+        <div class="pub-tags"><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>5</b></a></div>
         <p class="pub-links">[ <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
     </div>
 
-  </div>
-</section>
+    <div class="year-head">2020</div>
 
-
-<!-- ============================================================
-     [수정 5] 경력 — 기간과 내용을 실제에 맞게 고쳐주세요
-     ============================================================ -->
-<section class="section" id="experience">
-  <div class="container">
-    <h1 class="section-heading">Research Experiences</h1>
-
-    <div class="exp">
+    <div class="pub">
+      <img class="pub-thumb" src="assets/papers/ab9.png" alt="" data-label="ETRI Journal 2020&#10;main figure">
       <div>
-        <p class="org">ETRI</p>
-        <p class="where">Daejeon, Korea</p>
-        <p class="when">2019 - 2023</p>
+        <p class="pub-title">AB9: A Neural Processor for Inference Acceleration</p>
+        <p class="pub-authors">Yong Cheol Peter Cho, Jaehoon Chung, Jeongmin Yang, Chun-Gi Lyuh, Hyun-Mi Kim, Chan Kim, <b>Je-Seok Ham</b>, Minseok Choi, Jinho Han, Youngsu Kwon</p>
+        <p class="pub-venue"><i>ETRI Journal</i>, Vol. 42, No. 4, pp. 491&ndash;504, 2020</p>
+        <div class="pub-tags"><span class="tag tag-if">Impact Factor: <b>여기에 입력</b> &nbsp;·&nbsp; JCR: <b>여기에 입력</b></span><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>13</b></a></div>
+        <p class="pub-links">[ <a href="https://doi.org/10.4218/etrij.2020-0134" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
-      <p class="role"><b>Researcher</b>, Artificial Intelligence Research Laboratory<br>
-        Visual intelligence for intelligent transportation and pedestrian safety</p>
     </div>
 
-    <div class="exp">
+    <div class="year-head">2019</div>
+
+    <div class="pub">
+      <img class="pub-thumb" src="assets/papers/nature2019.png" alt="" data-label="Nature 2019&#10;main figure">
       <div>
-        <p class="org">Texas A&amp;M University</p>
-        <p class="where">College Station, TX, USA</p>
-        <p class="when">2023 - Present</p>
+        <p class="pub-title">Meningeal Lymphatic Vessels at the Skull Base Drain Cerebrospinal Fluid</p>
+        <p class="pub-authors">Ji Hoon Ahn, Hyunsoo Cho, Jun-Hee Kim, Shin Heun Kim, <b>Je-Seok Ham</b>, Intae Park, Sang Heon Suh, Seon Pyo Hong, et al.</p>
+        <p class="pub-venue"><i>Nature</i>, Vol. 572, No. 7767, pp. 62&ndash;66, 2019</p>
+        <div class="pub-tags"><span class="tag tag-if">Impact Factor: <b>여기에 입력</b> &nbsp;·&nbsp; JCR: <b>여기에 입력</b></span><a class="tag tag-cite" href="https://scholar.google.com/citations?user=rpOwJcMAAAAJ&amp;hl=ko" target="_blank" rel="noopener">Cited by <b>924</b></a></div>
+        <p class="pub-links">[ <a href="https://doi.org/10.1038/s41586-019-1419-5" target="_blank" rel="noopener">paper</a> ]</p>
       </div>
-      <p class="role"><b>Collaboration</b>, Unmanned Systems Lab &nbsp;·&nbsp; Prof. Srikanth Saripalli<br>
-        Generalizable pedestrian behavior prediction with foundation models</p>
+    </div>
+
+    <div class="pub">
+      <img class="pub-thumb" src="assets/papers/ismrm2019.png" alt="" data-label="ISMRM 2019&#10;main figure">
+      <div>
+        <p class="pub-title">Multiple TR Approach for Direct Detection of Fast Oscillating Magnetic Fields</p>
+        <p class="pub-authors"><b>Je-Seok Ham</b>, Hyun Seok Lee, Sung-Hong Park</p>
+        <p class="pub-venue"><i>ISMRM 27th Annual Meeting &amp; Exhibition</i>, 2019</p>
+        <p class="pub-links">[ <a href="https://archive.ismrm.org/2019/" target="_blank" rel="noopener">paper</a> ]</p>
+      </div>
+    </div>
+
+    <div class="year-head">2018</div>
+
+    <div class="pub">
+      <img class="pub-thumb" src="assets/papers/ismrm2018.png" alt="" data-label="ISMRM 2018&#10;main figure">
+      <div>
+        <p class="pub-title">Intra-operative MRI with MR Detectable Endoscope Using Tunable Lens Filled with MR Contrast Agent</p>
+        <p class="pub-authors"><b>Je-Seok Ham</b>, Sang-In Bae, Won-Joon Do, Ki-Hun Jeong, Sung-Hong Park</p>
+        <p class="pub-venue"><i>ISMRM 26th Annual Meeting &amp; Exhibition</i>, No. 1505, 2018</p>
+        <p class="pub-links">[ <a href="https://archive.ismrm.org/2018/" target="_blank" rel="noopener">paper</a> ]</p>
+      </div>
     </div>
 
   </div>
@@ -434,30 +516,6 @@ h1.section-heading{
   </div>
 </section>
 
-
-<!-- ============================================================
-     [수정 7] 학회 활동
-     ============================================================ -->
-<section class="section" id="activities">
-  <div class="container">
-    <h1 class="section-heading">Academic Activities</h1>
-    <div class="cols">
-      <div>
-        <h3>Reviewer</h3>
-        <ul class="bullets">
-          <li>CVPR, ICCV, ECCV</li>
-          <li>IEEE Transactions on Intelligent Transportation Systems</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Invited Talks</h3>
-        <ul class="bullets">
-          <li>발표 이력을 적어주세요 (없으면 이 묶음 삭제)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 <div class="foot">© <span id="y"></span> Je-Seok Ham · Last updated August 2026</div>
 
