@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     [수정 1] 이름 / 소개 / 사이트 주소
+     ============================================================ -->
+<title>Je-Seok Ham</title>
+<meta name="author" content="Je-Seok Ham">
+<meta name="description" content="Je-Seok Ham — Ph.D. student at KAIST. Computer vision, multimodal learning, pedestrian behavior prediction.">
+<meta property="og:title" content="Je-Seok Ham">
+<meta property="og:description" content="Ph.D. student at KAIST — computer vision &amp; multimodal learning.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   [수정 2] 색상 / 폰트 — 여기 값만 바꾸면 사이트 전체 톤이 바뀝니다
+   ============================================================ */
+:root{
+  --ink:        #16191d;   /* 본문 텍스트 */
+  --ink-soft:   #5a6169;   /* 보조 텍스트 */
+  --ink-faint:  #8b929a;   /* 연도, 캡션 */
+  --paper:      #ffffff;   /* 배경 */
+  --paper-alt:  #f6f7f8;   /* 카드/구분 배경 */
+  --rule:       #e3e6e9;   /* 선 */
+  --accent:     #1d4e89;   /* 링크·강조 (네이비) */
+  --accent-bg:  #eaf0f7;
+
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --maxw: 1080px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:76px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(29,78,137,.25)}
+a:hover{border-bottom-color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+img{max-width:100%; display:block}
+
+/* ---------- 상단 네비게이션 ---------- */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.88); backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-inner{
+  max-width:var(--maxw); margin:0 auto; padding:0 28px;
+  height:58px; display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.nav-name{font-family:var(--font-display); font-size:1.05rem; font-weight:600; letter-spacing:.01em; border:0; color:var(--ink); white-space:nowrap; flex-shrink:0}
+.nav-links{display:flex; gap:22px; overflow-x:auto; scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  border:0; color:var(--ink-soft); font-size:.86rem; font-weight:500;
+  letter-spacing:.02em; white-space:nowrap; padding:4px 0; border-bottom:2px solid transparent;
+}
+.nav-links a:hover{color:var(--ink); border-bottom-color:var(--accent)}
+
+/* ---------- 레이아웃 ---------- */
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px}
+.hero{
+  display:grid; grid-template-columns:230px 1fr; gap:52px;
+  padding:60px 0 48px; align-items:start;
+}
+section{padding:44px 0; border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+
+h2.section-title{
+  font-family:var(--font-display); font-size:1.5rem; font-weight:600;
+  margin:0 0 26px; letter-spacing:-.01em; color:var(--ink);
+}
+h2.section-title::after{
+  content:""; display:block; width:34px; height:2px; background:var(--accent); margin-top:10px;
+}
+
+/* ---------- 프로필 ---------- */
+.avatar{
+  width:180px; height:180px; border-radius:50%; object-fit:cover;
+  border:1px solid var(--rule); background:var(--paper-alt); margin:0 auto 18px;
+}
+.side{position:sticky; top:86px}
+.side-links{
+  display:flex; flex-wrap:wrap; gap:8px; justify-content:center;
+}
+.side-links a{
+  border:1px solid var(--rule); border-radius:999px; padding:5px 13px;
+  font-size:.78rem; font-weight:500; color:var(--ink-soft); background:var(--paper);
+}
+.side-links a:hover{background:var(--accent-bg); color:var(--accent); border-color:var(--accent)}
+
+.hero h1{
+  font-family:var(--font-display); font-size:2.7rem; font-weight:600;
+  margin:0 0 2px; letter-spacing:-.02em; line-height:1.1;
+}
+.hero .han{font-size:1.05rem; color:var(--ink-faint); font-weight:400; margin:0 0 16px}
+.hero .role{font-size:1rem; color:var(--ink-soft); margin:0 0 20px; line-height:1.55}
+.hero .role strong{color:var(--ink); font-weight:600}
+.hero p{margin:0 0 15px; color:var(--ink-soft)}
+.hero p strong{color:var(--ink)}
+
+/* ---------- 연구 관심사 ---------- */
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; padding:0; list-style:none}
+.tags li{
+  font-size:.82rem; font-weight:500; color:var(--accent);
+  background:var(--accent-bg); border-radius:4px; padding:4px 11px;
+}
+
+/* ---------- 학력 / 경력 ---------- */
+.timeline{list-style:none; padding:0; margin:0}
+.timeline li{
+  display:grid; grid-template-columns:190px 1fr; gap:26px;
+  padding:16px 0; border-bottom:1px solid var(--rule);
+}
+.timeline li:last-child{border-bottom:0}
+.timeline .when{
+  font-family:var(--font-mono); font-size:.8rem; color:var(--ink-faint);
+  padding-top:3px; letter-spacing:-.02em;
+}
+.timeline .what strong{display:block; font-size:1rem; font-weight:600; margin-bottom:2px}
+.timeline .what span{display:block; font-size:.9rem; color:var(--ink-soft)}
+
+/* ---------- 논문 목록 ---------- */
+.year-group{margin-bottom:34px}
+.year-label{
+  font-family:var(--font-mono); font-size:.8rem; font-weight:500;
+  color:var(--ink-faint); letter-spacing:.08em;
+  padding-bottom:7px; margin-bottom:14px; border-bottom:1px solid var(--rule);
+}
+.pub{
+  display:grid; grid-template-columns:216px 1fr; gap:26px;
+  padding:18px 0; align-items:start;
+}
+.pub-fig{
+  width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:5px;
+  border:1px solid var(--rule); background:var(--paper-alt);
+}
+.pub-fig-fallback{
+  width:100%; aspect-ratio:16/10; border-radius:5px; border:1px dashed var(--rule);
+  background:var(--paper-alt); display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-size:.74rem; color:var(--ink-faint);
+  text-align:center; padding:8px; line-height:1.4;
+}
+.pub-title{font-size:1.02rem; font-weight:600; line-height:1.4; margin:0 0 5px; color:var(--ink)}
+.pub-authors{font-size:.88rem; color:var(--ink-soft); margin:0 0 5px}
+.pub-authors .me{color:var(--ink); font-weight:600}
+.pub-venue{font-size:.88rem; margin:0 0 5px; color:var(--ink)}
+.pub-venue em{font-style:normal; font-weight:600}
+.pub-note{font-size:.83rem; color:var(--ink-faint); font-style:italic; margin:0 0 7px}
+.pub-links{display:flex; flex-wrap:wrap; gap:7px; margin-top:8px}
+.pub-links a{
+  font-size:.78rem; font-weight:500; padding:3px 10px; border-radius:4px;
+  border:1px solid var(--rule); color:var(--ink-soft);
+}
+.pub-links a:hover{background:var(--accent-bg); color:var(--accent); border-color:var(--accent)}
+
+/* ---------- 단순 목록 ---------- */
+.plain{list-style:none; padding:0; margin:0}
+.plain li{
+  padding:9px 0 9px 20px; position:relative;
+  border-bottom:1px solid var(--rule); font-size:.94rem; color:var(--ink-soft);
+}
+.plain li:last-child{border-bottom:0}
+.plain li::before{
+  content:""; position:absolute; left:2px; top:1.15em;
+  width:5px; height:5px; border-radius:50%; background:var(--accent); opacity:.5;
+}
+.plain li strong{color:var(--ink); font-weight:600}
+
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:20px 46px}
+.sub-head{
+  font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-faint); margin:0 0 10px;
+}
+
+/* ---------- 푸터 ---------- */
+footer{
+  border-top:1px solid var(--rule); padding:26px 0 44px;
+  font-size:.8rem; color:var(--ink-faint); display:flex;
+  justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+footer a{color:var(--ink-faint); border-bottom-color:transparent}
+footer a:hover{color:var(--accent)}
+
+/* ---------- 반응형 ---------- */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr; gap:28px; padding:36px 0 30px; text-align:center}
+  .side{position:static}
+  .hero h1{font-size:2.2rem}
+  .hero .role,.hero p,.tags{text-align:left}
+  .tags{justify-content:flex-start}
+  .pub{grid-template-columns:1fr; gap:14px}
+  .pub-fig,.pub-fig-fallback{max-width:340px}
+  .timeline li{grid-template-columns:1fr; gap:4px}
+  .two-col{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+  .nav-inner{padding:0 20px; gap:14px; height:54px}
+  .nav-name{font-size:.95rem}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:.82rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none !important; transition:none !important}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Je-Seok Ham</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#activities">Activities</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <!-- ============================================================
+       [수정 3] 프로필 — 사진, 소속, 링크, 자기소개
+       사진은 assets/profile.jpg 로 넣으세요 (정사각형 권장)
+       ============================================================ -->
+  <header class="hero">
+    <div class="side">
+      <img class="avatar" src="assets/profile.jpg" alt="Je-Seok Ham"
+           onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22><rect width=%22180%22 height=%22180%22 fill=%22%23f6f7f8%22/><text x=%2250%25%22 y=%2252%25%22 font-family=%22Georgia,serif%22 font-size=%2248%22 fill=%22%238b929a%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>JH</text></svg>'">
+      <div class="side-links">
+        <a href="mailto:jeseokham@kaist.ac.kr">Email</a>
+        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://github.com/JeSeokHam" target="_blank" rel="noopener">GitHub</a>
+        <a href="assets/CV_JeSeokHam.pdf">CV</a>
+        <a href="https://www.linkedin.com/in/YOUR_ID" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div>
+      <h1>Je-Seok Ham</h1>
+      <p class="han">함제석</p>
+      <p class="role">
+        Ph.D. Student, <strong>School of Electrical Engineering</strong><br>
+        <a href="https://cilabs.kaist.ac.kr/" target="_blank" rel="noopener">Computational Imaging Lab</a>,
+        <a href="https://kaist.ac.kr/" target="_blank" rel="noopener">KAIST</a>
+        &nbsp;·&nbsp; Advisor: Prof. Changick Kim
+      </p>
+
+      <p id="about">
+        I am a Ph.D. student in the School of Electrical Engineering at KAIST, advised by
+        <strong>Prof. Changick Kim</strong>. Before joining KAIST, I was a researcher at
+        <a href="https://www.etri.re.kr/eng/main/main.etri" target="_blank" rel="noopener">ETRI</a>
+        (Electronics and Telecommunications Research Institute), where I worked on visual
+        intelligence for intelligent transportation systems.
+      </p>
+      <p>
+        My research focuses on <strong>understanding and anticipating human behavior from video</strong>.
+        Recently I have been building multimodal systems that combine large vision-language models
+        with conventional spatio-temporal networks to predict pedestrian crossing intention —
+        a core capability for safe autonomous driving.
+      </p>
+
+      <ul class="tags">
+        <li>Computer Vision</li>
+        <li>Multimodal Learning</li>
+        <li>Action Anticipation</li>
+        <li>Pedestrian Behavior Prediction</li>
+        <li>Vision-Language Models</li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       [수정 4] 논문
+       - 최신 연도가 위로 오게 배치되어 있습니다.
+       - 그림은 assets/papers/ 안에 넣고 src 경로만 바꾸면 됩니다.
+         (파일이 없으면 자동으로 회색 플레이스홀더가 표시됩니다)
+       - 새 논문 추가: <div class="pub"> ... </div> 블록을 통째로 복사
+       ============================================================ -->
+  <section id="publications">
+    <h2 class="section-title">Publications</h2>
+
+    <!-- ================= 2026 ================= -->
+    <div class="year-group">
+      <div class="year-label">2026</div>
+
+      <div class="pub">
+        <img class="pub-fig" src="assets/papers/cee2026.png" alt="Multimodal understanding with GPT-4o — main figure"
+             data-label="CEE 2026&#10;main figure">
+        <div>
+          <p class="pub-title">Multimodal Understanding with GPT-4o to Enhance Generalizable Pedestrian Behavior Prediction</p>
+          <p class="pub-authors"><span class="me">Je-Seok Ham</span>, Jia Huang, Peng Jiang, Jinyoung Moon, Yongjin Kwon, Srikanth Saripalli, Changick Kim</p>
+          <p class="pub-venue"><em>Computers and Electrical Engineering</em>, Vol. 129, Part A, No. 110741, Jan. 2026</p>
+          <p class="pub-note">Journal paper (SCIE)</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.compeleceng.2025.110741" target="_blank" rel="noopener">Paper</a>
+            <!-- <a href="#">Code</a> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= 2024 ================= -->
+    <div class="year-group">
+      <div class="year-label">2024</div>
+
+      <div class="pub">
+        <img class="pub-fig" src="assets/papers/omnipredict.png" alt="OmniPredict — main figure"
+             data-label="NeurIPS-W 2024&#10;main figure">
+        <div>
+          <p class="pub-title">OmniPredict: GPT-4o Enhanced Multi-modal Pedestrian Crossing Intention Prediction</p>
+          <p class="pub-authors"><span class="me">Je-Seok Ham</span>, Jia Huang, Peng Jiang, Jinyoung Moon, Yongjin Kwon, Srikanth Saripalli, Changick Kim</p>
+          <p class="pub-venue"><em>NeurIPS 2024 Workshop</em> on Adaptive Foundation Models</p>
+          <div class="pub-links">
+            <a href="https://openreview.net/" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <img class="pub-fig" src="assets/papers/llamaped.png" alt="LLaMAPed — main figure"
+             data-label="ECCV-W 2024&#10;main figure">
+        <div>
+          <p class="pub-title">LLaMAPed: Multi-modal Pedestrian Crossing Intention Prediction</p>
+          <p class="pub-authors"><span class="me">Je-Seok Ham</span>, Sunghun Kim, Jia Huang, Peng Jiang, Jinyoung Moon, Srikanth Saripalli, Changick Kim</p>
+          <p class="pub-venue"><em>ECCV 2024 Workshops</em>, pp. 150–167</p>
+          <div class="pub-links">
+            <a href="https://link.springer.com/" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= 2023 ================= -->
+    <div class="year-group">
+      <div class="year-label">2023</div>
+
+      <div class="pub">
+        <img class="pub-fig" src="assets/papers/cipf.png" alt="CIPF — main figure"
+             data-label="CVPR-W 2023&#10;main figure">
+        <div>
+          <p class="pub-title">CIPF: Crossing Intention Prediction Network based on Feature Fusion Modules for Improving Pedestrian Safety</p>
+          <p class="pub-authors"><span class="me">Je-Seok Ham</span>, Dae Hoe Kim, NamKyo Jung, Jinyoung Moon</p>
+          <p class="pub-venue"><em>CVPR 2023 Workshops</em>, pp. 3665–3674</p>
+          <div class="pub-links">
+            <a href="https://openaccess.thecvf.com/content/CVPR2023W/WAD/papers/Ham_CIPF_Crossing_Intention_Prediction_Network_Based_on_Feature_Fusion_Modules_CVPRW_2023_paper.pdf" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= 2022 ================= -->
+    <div class="year-group">
+      <div class="year-label">2022</div>
+
+      <div class="pub">
+        <img class="pub-fig" src="assets/papers/mcip.png" alt="MCIP — main figure"
+             data-label="ECCV-W 2022&#10;main figure">
+        <div>
+          <p class="pub-title">MCIP: Multi-Stream Network for Pedestrian Crossing Intention Prediction</p>
+          <p class="pub-authors"><span class="me">Je-Seok Ham</span>, Kangmin Bae, Jinyoung Moon</p>
+          <p class="pub-venue"><em>ECCV 2022 Workshops</em>, pp. 663–679</p>
+          <div class="pub-links">
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-25056-9_42" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= 2021 ================= -->
+    <div class="year-group">
+      <div class="year-label">2021</div>
+
+      <div class="pub">
+        <img class="pub-fig" src="assets/papers/iscas2021.png" alt="Neural processor demo — main figure"
+             data-label="ISCAS 2021&#10;main figure">
+        <div>
+          <p class="pub-title">Live Demonstration: A Neural Processor for AI Acceleration</p>
+          <p class="pub-authors">Hyeji Kim, Jaehoon Chung, Kyoung-Seon Shin, Chun-Gi Lyuh, Hyun-Mi Kim, Chan Kim, Yong Cheol Peter Cho, Jeongmin Yang, <span class="me">Je-Seok Ham</span>, Minseok Choi, Jinho Han, Youngsu Kwon</p>
+          <p class="pub-venue"><em>IEEE International Symposium on Circuits and Systems (ISCAS)</em>, 2021</p>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       [수정 5] 학력 / 경력 — 날짜/내용 확인 후 고쳐주세요
+       ============================================================ -->
+  <section id="experience">
+    <h2 class="section-title">Education</h2>
+    <ul class="timeline">
+      <li>
+        <div class="when">Aug 2023 – Present</div>
+        <div class="what">
+          <strong>Ph.D. in Electrical Engineering</strong>
+          <span>KAIST, Daejeon, Korea &nbsp;·&nbsp; Advisor: Prof. Changick Kim</span>
+        </div>
+      </li>
+      <li>
+        <div class="when">Feb 2017 – Feb 2019</div>
+        <div class="what">
+          <strong>M.S. in Bio and Brain Engineering</strong>
+          <span>KAIST, Daejeon, Korea &nbsp;·&nbsp; Advisor: Prof. Sung-Hong Park</span>
+          <span>Thesis: Multiple TR approach for direct detection of fast oscillating magnetic fields</span>
+        </div>
+      </li>
+      <li>
+        <div class="when">Mar 2012 – Feb 2017</div>
+        <div class="what">
+          <strong>B.S. in Electrical Engineering</strong>
+          <span>Kyungpook National University, Daegu, Korea</span>
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="section-title" style="margin-top:44px">Research Experience</h2>
+    <ul class="timeline">
+      <li>
+        <div class="when">2019 – 2023</div>
+        <div class="what">
+          <strong>Researcher, ETRI</strong>
+          <span>Artificial Intelligence Research Laboratory, Daejeon, Korea</span>
+          <span>Visual intelligence for intelligent transportation and pedestrian safety</span>
+        </div>
+      </li>
+      <li>
+        <div class="when">2023 – Present</div>
+        <div class="what">
+          <strong>Collaboration, Texas A&amp;M University</strong>
+          <span>Unmanned Systems Lab &nbsp;·&nbsp; Prof. Srikanth Saripalli</span>
+          <span>Generalizable pedestrian behavior prediction with foundation models</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- ============================================================
+       [수정 6] 수상 — 없으면 이 <section> 통째로 지우고
+       네비게이션의 Awards 링크도 지우면 됩니다
+       ============================================================ -->
+  <section id="awards">
+    <h2 class="section-title">Awards &amp; Honors</h2>
+    <ul class="plain">
+      <li><strong>수상 내역을 여기에 적어주세요</strong> — 기관, 연도</li>
+      <li>예시) IITP 우수연구성과, 2023</li>
+    </ul>
+  </section>
+
+
+  <!-- ============================================================
+       [수정 7] 학회 활동
+       ============================================================ -->
+  <section id="activities">
+    <h2 class="section-title">Academic Activities</h2>
+    <div class="two-col">
+      <div>
+        <p class="sub-head">Reviewer</p>
+        <ul class="plain">
+          <li>CVPR</li>
+          <li>ICCV / ECCV</li>
+          <li>IEEE Transactions on Intelligent Transportation Systems</li>
+        </ul>
+      </div>
+      <div>
+        <p class="sub-head">Contact</p>
+        <ul class="plain">
+          <li>jeseokham [at] kaist.ac.kr</li>
+          <li>N1 Building, KAIST, 291 Daehak-ro, Yuseong-gu, Daejeon 34141, Korea</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Je-Seok Ham</span>
+    <span>Last updated: August 2026</span>
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 논문 그림 파일이 아직 없으면 회색 플레이스홀더로 대체합니다.
+  function swapInPlaceholder(img) {
+    if (!img.parentNode) return;
+    var box = document.createElement('div');
+    box.className = 'pub-fig-fallback';
+    box.textContent = img.dataset.label || 'main figure';
+    box.style.whiteSpace = 'pre-line';
+    img.replaceWith(box);
+  }
+
+  document.querySelectorAll('.pub-fig').forEach(function (img) {
+    img.addEventListener('error', function () { swapInPlaceholder(img); });
+    // 스크립트가 실행되기 전에 이미 로딩이 실패한 경우도 처리
+    if (img.complete && img.naturalWidth === 0) swapInPlaceholder(img);
+  });
+</script>
+
+</body>
+</html>
